@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -30,10 +31,11 @@ public class Flight {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@LastModifiedDate
 	private Date creationDate;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "flight")
-	private List<Ticket> ticket;
+//	@OneToMany(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "flight")
+//	private List<Ticket> ticket;
 
 	public Flight() {
 		departureCity = "departure city";
@@ -49,13 +51,13 @@ public class Flight {
 		
 	}
 
-	public List<Ticket> getTicket() {
-		return ticket;
-	}
-
-	public void setTicket(List<Ticket> ticket) {
-		this.ticket = ticket;
-	}
+//	public List<Ticket> getTicket() {
+//		return ticket;
+//	}
+//
+//	public void setTicket(List<Ticket> ticket) {
+//		this.ticket = ticket;
+//	}
 
 	public String getDepartureCity() {
 		return departureCity;

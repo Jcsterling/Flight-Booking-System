@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.bae.flightBookingApp.business.TicketService;
-import com.bae.flightBookingApp.persistence.domain.Flight;
 import com.bae.flightBookingApp.persistence.domain.Ticket;
 
 @RestController
