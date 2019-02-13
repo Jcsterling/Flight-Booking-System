@@ -37,7 +37,7 @@ public class FlightService {
 			newFlight.setArrivalCity(flight.getArrivalCity());
 			newFlight.setDepartureCity(flight.getDepartureCity());
 			newFlight.setFlightNumber(flight.getFlightNumber());
-			newFlight.setFlightID(flight.getFlightID());
+			newFlight.setId(flight.getId());
 			flightRepo.save(flight);
 		}	
 		return "Flight updated";

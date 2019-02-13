@@ -10,7 +10,7 @@ public class Passenger {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long passengerID;
+	private Long id;
 	private String name;
 
 	public Passenger() {
@@ -29,12 +29,13 @@ public class Passenger {
 		this.name = name;
 	}
 
-	public Long getPassengerID() {
-		return passengerID;
+	public Long getId() {
+		return id;
 	}
 
-	public void setPassengerID(Long passengerID) {
-		this.passengerID = passengerID;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
 
 }

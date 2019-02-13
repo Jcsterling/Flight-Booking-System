@@ -13,13 +13,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import com.bae.flightBookingApp.business.TicketService;
 import com.bae.flightBookingApp.persistence.domain.Ticket;
 
+
 @RestController
+@RequestMapping("/api")
 public class TicketController {
 
 	@Autowired
@@ -40,6 +43,7 @@ public class TicketController {
 		if (ticket.getCreationDate() == null) 	
 			ticket.setCreationDate(new Date());
 		ticketService.addTicket(ticket);
+		
 	}
 	
 //	@PutMapping("/updateFlight/{id}")

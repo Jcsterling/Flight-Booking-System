@@ -10,7 +10,7 @@ public class Seat {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long seatID;
+	private Long id;
 	private String seatNumber;
 
 	public Seat() {
@@ -29,12 +29,14 @@ public class Seat {
 		this.seatNumber = seatNumber;
 	}
 
-	public Long getSeatID() {
-		return seatID;
+	public Long getId() {
+		return id;
 	}
 
-	public void setSeatID(Long seatID) {
-		this.seatID = seatID;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+	
 
 }

@@ -23,14 +23,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Flight {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long flightID;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String departureCity;
 	private String arrivalCity;
 	private int flightNumber;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@Temporal(TemporalType.TIME)
 	@LastModifiedDate
 	private Date creationDate;
 	
@@ -82,13 +81,7 @@ public class Flight {
 	public void setFlightNumber(int flightNumber) {
 		this.flightNumber = flightNumber;
 	}
-	public Long getFlightID() {
-		return flightID;
-	}
-
-	public void setFlightID(Long flightID) {
-		this.flightID = flightID;
-	}
+	
 
 	public Date getCreationDate() {
 		return creationDate;
@@ -97,6 +90,15 @@ public class Flight {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	
 
 }
