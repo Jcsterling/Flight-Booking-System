@@ -21,9 +21,6 @@ public class Ticket {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String ticket;
-	
-
 	@LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL)
 	private List<Passenger> passenger;
@@ -35,6 +32,11 @@ public class Ticket {
 	@LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL)
 	private List<Seat> seat;
+	
+	private Flight Flight;
+	private Seat Seat;
+	private Passenger Passenger;
+	
 	
 	private Date creationDate;
 
@@ -48,6 +50,12 @@ public class Ticket {
 		setCreationDate(creationDate);
 	}
 
+	public Ticket ( Passenger Passenger, Flight Flight, Seat Seat, Date creationDate) {
+		setPassenger(Passenger);
+		setFlight(Flight);
+		setSeat(Seat);
+		setCreationDate(creationDate);
+	}
 	public List<Passenger> getPassenger() {
 		return passenger;
 	}
@@ -86,16 +94,25 @@ public class Ticket {
 		this.id = id;
 	}
 
+	public void setFlight(Flight flight) {
+		Flight = flight;
+	}
+
+	public void setSeat(Seat seat) {
+		Seat = seat;
+	}
+
+	public void setPassenger(Passenger passenger) {
+		Passenger = passenger;
+	}
+
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
 
-	public String getTicket() {
-		return ticket;
-	}
 
-	public void setTicket(String ticket) {
-		this.ticket = ticket;
-	}
+
+
+	
 
 }

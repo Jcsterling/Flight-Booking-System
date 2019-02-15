@@ -15,8 +15,6 @@ import com.bae.flightBookingApp.persistence.repository.FlightRepository;
 @Service
 public class FlightService {
 	
-	
-
 	@Autowired
 	private FlightRepository flightRepo;
 	
